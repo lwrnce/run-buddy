@@ -17,9 +17,17 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-bg.jpg");
+    background-size: cover;
+    background-position: 80%;
+    background-attachment: fixed;
 }
 
 header h1 {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-weight: bold;
     font-size: 36px;
     color: #fce138;
@@ -44,9 +52,17 @@ header nav ul {
 }
 
 header nav ul li a {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
 }
 
 /* HEADER / NAVBAR END */
@@ -59,11 +75,12 @@ section {
 .hero {
     background-image: url("./images/hero-bg.jpg");
     background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    background-position: 80%;
+    background-attachment: fixed;
 }
 
 .hero-cta {
@@ -76,18 +93,21 @@ section {
 }
 
 .hero-cta h2 {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     font-style: italic;
     font-size: 55px;
     color: #fce138;
 }
 
 .hero-form {
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     width: 40%;
     margin: 3.5%;
     color: #024e76;
     border: solid 3px #024e76;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -109,8 +129,15 @@ section {
     padding: 7px 15px;
     font-size: 16px;
     color: #024e76;
+    background-color: rgba(255, 255, 255, 0.75);
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.form-input:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .hero-form button {
@@ -119,7 +146,13 @@ section {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
 }
+
+.hero-form button:hover {
+    background-color: #39a6b2;
+}
+
 /* HERO STYLE END */
 
 /* INTRO START */
@@ -143,11 +176,14 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .section-title {
@@ -297,6 +333,7 @@ section {
 .contact-form input,
 .contact-form textarea {
     border: 1px solid #024e76;
+    background-color: rgba(255, 255, 255, 0.75);
     display: block;
     padding: 7px 15px;
     font-size: 16px;
@@ -304,6 +341,13 @@ section {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 10px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: rgba(255, 255, 255, 1);
+    outline: none;
 }
 
 .contact-form button {
@@ -314,6 +358,12 @@ section {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 10px;
+}
+
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
 }
 
 /* CONTACT END */
@@ -366,52 +416,53 @@ footer a {
 
 /**MEDIA QUERIES**/
 @media screen and (max-width: 980px) {
-  header {
-      padding-bottom: 0;
-      justify-content: center;
-  }
+    header {
+        padding-bottom: 0;
+        justify-content: center;
+        position: relative
+    }
 
-  header h1 {
-      width: 100%;
-      text-align: center;
-  }
+    header h1 {
+        width: 100%;
+        text-align: center;
+    }
 
-  header nav ul {
-      margin-top: 20px;
-      width: 100%;
-      justify-content: center;
-  }
+    header nav ul {
+        margin-top: 20px;
+        width: 100%;
+        justify-content: center;
+    }
 
-  header nav ul li a {
-      font-size: 20px;
-  }
+    header nav ul li a {
+        font-size: 20px;
+    }
 
-  .hero-cta,
-  .hero-form {
-      width: 100%;
-  }
+    .hero-cta,
+    .hero-form {
+        width: 100%;
+    }
 
-  .hero-cta {
-      text-align: center;
-  }
+    .hero-cta {
+        text-align: center;
+    }
 
-  .section-title {
-      width: 80%;
-  }
+    .section-title {
+        width: 80%;
+    }
 
-  .trainer {
-      flex: 0 70%;
-  }
+    .trainer {
+        flex: 0 70%;
+    }
 
-  .contact-info iframe {
-      flex: 1 100%;
-  }
+    .contact-info iframe {
+        flex: 1 100%;
+    }
 
-  footer h2,
-  footer div {
-      text-align: center;
-      width: 100%;
-  }
+    footer h2,
+    footer div {
+        text-align: center;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 768px) {
